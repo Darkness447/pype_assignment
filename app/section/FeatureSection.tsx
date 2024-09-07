@@ -10,21 +10,39 @@ const FeatureSection = () => {
                 <Image src={"/3start.svg"} height={15} width={15} alt="3star" />
                 Features</button>
             <h1 className='text-center text-3xl font-medium'>Turbocharge your LLM apps development</h1>
-            <div className='grid gap-7  justify-center items-start grid-cols-1 md:grid-cols-2'>
-                {
-                    features.map((item, index) => {
-                        return (
-                            <div className='flex items-center justify-center'>
-                                <FeatureBox
-                                    description={item.description}
-                                    name={item.title}
-                                    key={index}
-                                    link={item.link}
-                                />
-                            </div>
-                        );
-                    })
-                }
+            <div className='flex flex-col justify-center gap-7 md:flex-row'>
+                <div className='flex flex-col gap-7'>
+                    {
+                        features.slice(0, features.length / 2).map((item, index) => {
+                            return (
+                                <div className='flex items-start '>
+                                    <FeatureBox
+                                        description={item.description}
+                                        name={item.title}
+                                        key={index}
+                                        link={item.link}
+                                    />
+                                </div>
+                            );
+                        })
+                    }
+                </div>
+                <div className='flex flex-col gap-7'>
+                    {
+                        features.slice((features.length / 2)).map((item, index) => {
+                            return (
+                                <div className='flex items-start '>
+                                    <FeatureBox
+                                        description={item.description}
+                                        name={item.title}
+                                        key={index}
+                                        link={item.link}
+                                    />
+                                </div>
+                            );
+                        })
+                    }
+                </div>
             </div>
         </div>
     )

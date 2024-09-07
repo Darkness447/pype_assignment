@@ -10,7 +10,7 @@ interface FeatureBoxProps {
 const FeatureBox = ({ name, description, link }: FeatureBoxProps) => {
     console.log(link)
     return (
-        <div className=' w-[45rem]  border-2 rounded-xl '>
+        <div className=' w-full  border-2 rounded-xl '>
             <div className='p-10 flex flex-col gap-2'>
                 <h1 className='text-left text-xl font-bold'>{name}</h1>
                 <p className='text-left text-md text-gray-500 font-medium'>{description}</p>

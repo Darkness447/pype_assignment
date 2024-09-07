@@ -5,9 +5,9 @@ import { FaArrowRight } from "react-icons/fa";
 
 const HeroSection = () => {
     return (
-        <header className='pt-14 flex flex-col gap-20'>
-            <div className='flex flex-col gap-14 max-w-xl mx-auto p-5'>
-                <h1 className='mx-auto text-center text-4xl md:text-5xl  md:font-bold '>Build, Evaluate and Improve Prompts 10x faster</h1>
+        <header className='pt-28 flex flex-col gap-20'>
+            <div className='flex flex-col gap-14 max-w-[38rem] mx-auto p-5'>
+                <h1 className='mx-auto text-center text-4xl md:text-6xl  md:font-bold '>Build, Evaluate and Improve Prompts 10x faster</h1>
                 <p className=' text-center mx-auto'>Empower your team to build, evaluate, and deploy high-performing prompts for LLM-based applications. Pype streamlines collaboration, version control, and performance analysis, helping you deliver reliable AI solutions faster.</p>
             </div>
             <VideoComponent videoLink='https://www.youtube.com/embed/-y_KrosGWaU' />
