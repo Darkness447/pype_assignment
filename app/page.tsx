@@ -1,4 +1,5 @@
 import CompanyLogoSection from "./section/CompanyLogoSection";
+import FeatureSection from "./section/FeatureSection";
 import HeroSection from "./section/HeroSection";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <div className="flex flex-col gap-10">
       <HeroSection />
       <CompanyLogoSection />
+      <FeatureSection />
     </div>
   );
 }
