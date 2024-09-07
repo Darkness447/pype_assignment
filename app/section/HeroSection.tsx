@@ -1,13 +1,17 @@
+"use client"
 import React from 'react'
 import VideoComponent from '../components/VideoComponent'
 import { FaArrowRight } from "react-icons/fa";
+import { useTheme } from '@/context/ThemeContext';
 
 
 const HeroSection = () => {
+    const { isDarkMode: isOn } = useTheme();
+
     return (
         <header className='pt-28 flex flex-col gap-20'>
             <div className='flex flex-col gap-14 max-w-[38rem] mx-auto p-5'>
-                <h1 className='mx-auto text-center text-4xl md:text-6xl  md:font-bold '>Build, Evaluate and Improve Prompts 10x faster</h1>
+                <h1 className={`mx-auto text-center text-4xl md:text-6xl  md:font-bold ${isOn?"text-purple-500":""}`}>Build, Evaluate and Improve Prompts 10x faster</h1>
                 <p className=' text-center mx-auto'>Empower your team to build, evaluate, and deploy high-performing prompts for LLM-based applications. Pype streamlines collaboration, version control, and performance analysis, helping you deliver reliable AI solutions faster.</p>
             </div>
             <VideoComponent videoLink='https://www.youtube.com/embed/-y_KrosGWaU' />

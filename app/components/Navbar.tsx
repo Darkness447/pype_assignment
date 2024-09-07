@@ -2,24 +2,28 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import React from 'react';
+import ToggleButton from './ToggleButton';
+import { useTheme } from '@/context/ThemeContext';
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
+  const { isDarkMode: isOn, toggleTheme } = useTheme();
+
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop =   document.documentElement.scrollTop;
+      const scrollTop = document.documentElement.scrollTop;
       if (scrollTop > lastScrollTop) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
       }
-      setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop); 
+      setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
     };
 
     window.addEventListener('scroll', handleScroll);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -39,6 +43,8 @@ const Navbar = () => {
         <div className='flex place-items-center gap-10'>
           <button>Features</button>
           <button className='py-3 px-4 bg-black text-gray-300 text-sm rounded-xl shadow-md'>Launch App</button>
+          <ToggleButton />
+          <h1> {isOn ? 'Purple Mode' : 'Light Mode'} </h1>
         </div>
       </div>
     </nav>
