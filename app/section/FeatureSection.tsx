@@ -11,7 +11,8 @@ swell.init('deepesh', process.env.SWELL_PUBLIC_KEY)
 interface FeatureBoxProps {
     title: String,
     description: String,
-    link?: string
+    link?: string,
+    path?: string
 }
 
 const FeatureSection: React.FC = () => {
@@ -20,6 +21,7 @@ const FeatureSection: React.FC = () => {
 
     useEffect(() => {
         const data = async () => {
+
             const response = await swell.products.list({
                 category: 'features',
                 limit: 25,
@@ -27,11 +29,14 @@ const FeatureSection: React.FC = () => {
             })
 
 
+            console.log(response)
+
             const Finaldata = response.results.map((item, index) => {
                 return {
                     title: item?.name,
                     description: item?.description,
-                    link: item.images && item.images[0].file?.url
+                    link: item.images && item.images[0].file?.url,
+                    path: item.attributes && item.attributes?.path?.value
                 }
             })
 
@@ -51,7 +56,7 @@ const FeatureSection: React.FC = () => {
             <div className='flex flex-col justify-center gap-7 md:flex-row'>
                 <div className='flex flex-col gap-7'>
                     {
-                        features.slice(0, features.length / 2).map((item, index) => {
+                        features ? features.slice(0, features.length / 2).map((item, index) => {
                             return (
                                 <div className='flex items-start '>
                                     <FeatureBox
@@ -59,26 +64,28 @@ const FeatureSection: React.FC = () => {
                                         name={item.title}
                                         key={index}
                                         link={item?.link}
+                                        path={item?.path}
                                     />
                                 </div>
                             );
-                        })
+                        }) : ""
                     }
                 </div>
                 <div className='flex flex-col gap-7'>
                     {
-                        features.slice((features.length / 2)).map((item, index) => {
+                        features ? features.slice((features.length / 2)).map((item, index) => {
                             return (
                                 <div className='flex items-start '>
                                     <FeatureBox
                                         description={item.description}
                                         name={item.title}
                                         key={index}
-                                        link={item.link}
+                                        link={item?.link}
+                                        path={item?.path}
                                     />
                                 </div>
                             );
-                        })
+                        }) : ""
                     }
                 </div>
             </div>

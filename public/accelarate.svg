@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 24 24"
+    color="var(--token-1010e306-6ee2-47e5-bffe-788055bd3b08, rgb(83, 83, 92))"
+    style="user-select: none; width: 100%; height: 100%; display: inline-block; fill: var(--token-1010e306-6ee2-47e5-bffe-788055bd3b08, rgb(83, 83, 92)); flex-shrink: 0;">
+    <path
+        d="M20 3H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h3l-1 1v2h12v-2l-1-1h3c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H4V5h16v11z"></path>
+</svg>
