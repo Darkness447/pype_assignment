@@ -51,6 +51,17 @@ README.md
 tailwind.config.ts
 ```
 
+## Styling
+
+All styling in the project is done using **Tailwind CSS**. Tailwind provides a utility-first approach to styling, allowing you to rapidly build custom designs without leaving your HTML. It simplifies the development process by using pre-defined classes, which makes the code easy to manage and understand.
+
+### Key Benefits of Tailwind CSS in This Project:
+
+- **Rapid Development**: With utility classes, you can style components quickly without writing custom CSS files.
+- **Responsive Design**: Tailwind includes responsive utilities that make it easy to build mobile-first designs.
+- **Consistency**: Utility classes ensure consistent spacing, colors, and typography across all components.
+
+
 ## Components
 
 ### Navbar
@@ -90,7 +101,7 @@ The `FeatureBox` component highlights various features of the application. It's 
 
 ### Dynamic Routing
 
-Dynamic routing is implemented in the `/dynamic/[slug]/page.tsx` file, which allows content to be loaded based on URL parameters dynamically.
+Dynamic routing is implemented in the `/dynamic/[slug]` file, which allows content to be loaded based on URL parameters dynamically.
 
 ## Context API - Toggle Button
 
