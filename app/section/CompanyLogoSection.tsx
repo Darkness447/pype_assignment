@@ -1,5 +1,5 @@
 "use client";
-import { logos } from "@/lib/companylogo";
+import { logos } from "@/lib/data";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
