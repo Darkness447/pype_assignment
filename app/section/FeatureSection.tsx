@@ -2,11 +2,8 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import FeatureBox from '../components/FeatureBox'
-import swell from 'swell-js'
+import { data } from '../query'
 
-// Initialize client with your store ID and a public key 
-// @ts-expect-error key type is string
-swell.init('deepesh', process.env.SWELL_PUBLIC_KEY)
 
 interface FeatureBoxProps {
     title: string,
@@ -20,31 +17,14 @@ const FeatureSection: React.FC = () => {
     const [features, setFeatures] = useState<FeatureBoxProps[]>([]);
 
     useEffect(() => {
-        const data = async () => {
 
-            const response = await swell.products.list({
-                category: 'features',
-                limit: 25,
-                page: 1
-            })
-
-
-            console.log(response)
-
-            const Finaldata = response.results.map((item) => {
-                return {
-                    title: item?.name,
-                    description: item?.description,
-                    link: item.images && item.images[0].file?.url,
-                    path: item.attributes && item.attributes?.path?.value
-                }
-            })
-
-            // @ts-expect-error array of objects here
-            setFeatures(Finaldata)
+        (async function () {
+            const response = await data();
+            // @ts-expect-error response
+            setFeatures(response);
         }
+        )()
 
-        data();
     }, [])
 
     return (

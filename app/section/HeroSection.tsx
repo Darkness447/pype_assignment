@@ -16,7 +16,7 @@ const HeroSection = () => {
             </div>
             <VideoComponent videoLink='https://www.youtube.com/embed/-y_KrosGWaU' />
             <div className='flex justify-center md:gap-10 gap-5'>
-                <button className='md:py-3 md:px-14 py-5 px-7 bg-black text-gray-300 text-sm rounded-xl shadow-md'>Launch App</button>
+                <button className='md:py-3 md:px-16 py-5 px-7 bg-black text-gray-300 text-sm rounded-xl shadow-md'>Launch App</button>
                 <button className='flex  gap-3 place-items-center py-5 px-5 md:py-3 md:px-14 bg-blue-600 text-white text-sm rounded-xl shadow-md'>Book a demo
                     <span>
                     <FaArrowRight />
