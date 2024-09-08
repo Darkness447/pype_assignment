@@ -44,7 +44,7 @@ const Navbar = () => {
           <button>Features</button>
           <button className='py-3 px-4 bg-black text-gray-300 text-sm rounded-xl shadow-md'>Launch App</button>
           <ToggleButton />
-          <h1> {isOn ? 'Purple Mode' : 'Light Mode'} </h1>
+          <h1 className='w-24'> {isOn ? 'Purple Mode' : 'Light Mode'} </h1>
         </div>
       </div>
     </nav>
