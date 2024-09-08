@@ -2,8 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 
 interface FeatureBoxProps {
-    name: String,
-    description: String,
+    name: string,
+    description: string,
     link?: string,
     path?: string
 }

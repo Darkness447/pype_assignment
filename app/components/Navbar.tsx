@@ -8,7 +8,7 @@ import { useTheme } from '@/context/ThemeContext';
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
-  const { isDarkMode: isOn, toggleTheme } = useTheme();
+  const { isDarkMode: isOn } = useTheme();
 
 
   useEffect(() => {

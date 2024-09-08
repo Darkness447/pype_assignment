@@ -7,7 +7,7 @@ const CompanyLogoSection = () => {
   return (
     <div className="mb-12 flex flex-col gap-10">
       <h3 className="text-center text-gray-500">
-        Helping individuals and teams at the world's best companies
+        Helping individuals and teams at the world&apos;s best companies
       </h3>
       <div className="max-w-[80%] mx-auto relative overflow-hidden">
         <div className="absolute inset-0 z-10 pointer-events-none">

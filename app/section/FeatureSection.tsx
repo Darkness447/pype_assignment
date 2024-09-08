@@ -4,13 +4,13 @@ import React, { useEffect, useState } from 'react'
 import FeatureBox from '../components/FeatureBox'
 import swell from 'swell-js'
 
-// Initialize client with your store ID and a public key
-// @ts-ignore
+// Initialize client with your store ID and a public key 
+// @ts-expect-error key type is string
 swell.init('deepesh', process.env.SWELL_PUBLIC_KEY)
 
 interface FeatureBoxProps {
-    title: String,
-    description: String,
+    title: string,
+    description: string,
     link?: string,
     path?: string
 }
@@ -31,7 +31,7 @@ const FeatureSection: React.FC = () => {
 
             console.log(response)
 
-            const Finaldata = response.results.map((item, index) => {
+            const Finaldata = response.results.map((item) => {
                 return {
                     title: item?.name,
                     description: item?.description,
@@ -40,7 +40,7 @@ const FeatureSection: React.FC = () => {
                 }
             })
 
-            // @ts-ignore
+            // @ts-expect-error array of objects here
             setFeatures(Finaldata)
         }
 
@@ -58,11 +58,11 @@ const FeatureSection: React.FC = () => {
                     {
                         features ? features.slice(0, features.length / 2).map((item, index) => {
                             return (
-                                <div className='flex items-start '>
+                                <div className='flex items-start ' key={index}
+                                >
                                     <FeatureBox
                                         description={item.description}
                                         name={item.title}
-                                        key={index}
                                         link={item?.link}
                                         path={item?.path}
                                     />
@@ -75,11 +75,11 @@ const FeatureSection: React.FC = () => {
                     {
                         features ? features.slice((features.length / 2)).map((item, index) => {
                             return (
-                                <div className='flex items-start '>
+                                <div className='flex items-start ' key={index}
+                                >
                                     <FeatureBox
                                         description={item.description}
                                         name={item.title}
-                                        key={index}
                                         link={item?.link}
                                         path={item?.path}
                                     />
